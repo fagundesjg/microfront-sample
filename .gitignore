@@ -1,0 +1,4 @@
+clubpetro-npm
+node_modules
+.env.production
+.env

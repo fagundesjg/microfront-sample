@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  app-home:
+    container_name: app-home
+    build:
+      context: ./home
+
+  app-users:
+    container_name: app-users
+    build:
+      context: ./users
+
+  app-attendants:
+    container_name: app-attendants
+    build:
+      context: ./attendants
+
+  orchestrator:
+    container_name: orchestrator
+    ports:
+      - 80:80
+    depends_on:
+      - app-users
+    build:
+      context: .
